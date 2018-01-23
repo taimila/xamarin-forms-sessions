@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="WeatherExample.WeatherPage"
+    BackgroundImage="bg.jpg">
+	<ContentPage.Content>
+        <StackLayout>
+            <Label 
+                x:Name ="City"
+                TextColor="White"
+                HorizontalTextAlignment="Center" 
+                Text="Turku" 
+                FontSize="38"
+                FontAttributes="Bold" />
+
+            <Image 
+                HorizontalOptions="Center"
+                BackgroundColor="Red" 
+                WidthRequest="100" 
+                HeightRequest="100" />
+
+            <Label 
+                TextColor="#FFFFFF"
+                Text="{Binding Temperature}" 
+                HorizontalTextAlignment="Center"
+                FontSize="38"
+                FontAttributes="Bold"/>
+
+            <Grid 
+                HorizontalOptions="Center"
+                RowSpacing="10"
+                ColumnSpacing="0"
+                BackgroundColor="Aqua">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                    
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Humidity" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Pressure" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Min Temp" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Max Temp" />
+                
+                <Label Grid.Row="0" Grid.Column="1" Text="data1" />
+                <Label Grid.Row="1" Grid.Column="1" Text="data2" />
+                <Label Grid.Row="2" Grid.Column="1" Text="data3" />
+                <Label Grid.Row="3" Grid.Column="1" Text="data4" />
+                
+            </Grid>
+
+            <Button  
+                Margin="40"
+                x:Name="MyBytton" 
+                Text="Refresh" 
+                BackgroundColor="Lime" 
+                Clicked="Handle_Clicked" />
+            
+        </StackLayout>
+
+
+        
+	</ContentPage.Content>
+</ContentPage>
